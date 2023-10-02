@@ -21,12 +21,13 @@ IF EXIST .\CMD.EXE CD ..\..
 
 
 REM ## determine dpi for xfce scaling
-ECHO Enter to use default. 
+ECHO Press ENTER to use default. 
 REM ## SET /p DISTRO=Enter location abbrev plus machine asset tag ex US01120, CA01391, AU03281 [US00000]: 
-IF EXIST "%DISTRO%" (ECHO. & ECHO Folder exists with that name, choose a new folder name. & PAUSE & GOTO DI)
-WSL.EXE -d %DISTRO% -e . > "%TEMP%\InstCheck.tmp"
-FOR /f %%i in ("%TEMP%\InstCheck.tmp") do set CHKIN=%%~zi 
-IF %CHKIN% == 0 (ECHO. & ECHO There is a WSL distribution registered with that name; uninstall it or choose a new name. & PAUSE & GOTO DI)
+REM ## IF EXIST "%DISTRO%" (ECHO. & ECHO Folder exists with that name, choose a new folder name. & PAUSE & GOTO DI)
+REM ## WSL.EXE -d %DISTRO% -e . > "%TEMP%\InstCheck.tmp"
+REM ## FOR /f %%i in ("%TEMP%\InstCheck.tmp") do set CHKIN=%%~zi 
+REM ## IF %CHKIN% == 0 (ECHO. & ECHO There is a WSL distribution registered with that name; uninstall it or choose a new name. & PAUSE & GOTO DI)
+
 SET RDPPRT=3399& SET /p RDPPRT=Port number for xRDP traffic or hit Enter to use default [3399]: 
 SET SSHPRT=3322& SET /p SSHPRT=Port number for SSHd traffic or hit Enter to use default [3322]: 
                  SET /p WINDPI=Set a custom DPI scale, or hit Enter for Windows default [%WINDPI%]: 
