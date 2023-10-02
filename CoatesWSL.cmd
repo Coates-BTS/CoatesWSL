@@ -1,4 +1,4 @@
-@ECHO OFF & NET SESSION >NUL 2>&1 
+ @ECHO OFF & NET SESSION >NUL 2>&1 
 IF %ERRORLEVEL% == 0 (ECHO Administrator check passed...) ELSE (ECHO You need to run this command with administrative rights.  Is User Account Control enabled? && pause && goto ENDSCRIPT)
 
 COLOR 1F
@@ -22,7 +22,7 @@ IF EXIST .\CMD.EXE CD ..\..
 
 REM ## determine dpi for xfce scaling
 ECHO Enter to use default. 
-SET /p DISTRO=Enter location abbrev plus machine asset tag ex US01120, CA01391, AU03281 [US00000]: 
+REM ## SET /p DISTRO=Enter location abbrev plus machine asset tag ex US01120, CA01391, AU03281 [US00000]: 
 IF EXIST "%DISTRO%" (ECHO. & ECHO Folder exists with that name, choose a new folder name. & PAUSE & GOTO DI)
 WSL.EXE -d %DISTRO% -e . > "%TEMP%\InstCheck.tmp"
 FOR /f %%i in ("%TEMP%\InstCheck.tmp") do set CHKIN=%%~zi 
