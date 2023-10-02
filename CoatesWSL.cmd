@@ -20,7 +20,7 @@ CLS && SET RUNSTART=%date% @ %time:~0,5%
 IF EXIST .\CMD.EXE CD ..\..
 
 
-REM ## determine dpi for xfce scaling
+REM ## determine ports, dpi and scaling for xfce remote session
 ECHO Press ENTER to use default. 
 SET RDPPRT=3399& SET /p RDPPRT=Port number for xRDP traffic or hit Enter to use default [3399]: 
 SET SSHPRT=3322& SET /p SSHPRT=Port number for SSHd traffic or hit Enter to use default [3322]: 
