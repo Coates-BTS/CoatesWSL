@@ -6,7 +6,7 @@ SET DISTRO=CoatesWSL
 SET GITORG=Coates-BTS
 SET GITPRJ=CoatesWSL
 SET BRANCH=main
-SET BASE=https://github.com/%GITORG%/%GITPRJ%/blob/%BRANCH%
+SET BASE=https://github.com/%GITORG%/%GITPRJ%/raw/%BRANCH%
 
 
 REM ## Enable WSL if required
