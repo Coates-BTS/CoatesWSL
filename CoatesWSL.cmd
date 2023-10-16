@@ -81,7 +81,7 @@ ECHO Apt update and clone repo packages
 %GO% "echo 'deb http://archive.ubuntu.com/ubuntu/ jammy main restricted universe' > /etc/apt/sources.list"
 %GO% "echo 'deb http://archive.ubuntu.com/ubuntu/ jammy-updates main restricted universe' >> /etc/apt/sources.list"
 %GO% "echo 'deb http://security.ubuntu.com/ubuntu/ jammy-security main restricted universe' >> /etc/apt/sources.list"
-%GO% "rm -rf /etc/apt/apt.conf.d/20snapd.conf /etc/systemd/system/snap* /var/cache/snapd /etc/rc2.d/S01whoopsie /etc/init.d/console-setup.sh ; echo 'echo 1' > /usr/sbin/runlevel"
+%GO% "rm -rf /etc/apt/apt.conf.d/20snapd.conf /etc/systemd/system/snap* /var/cache/snapd /etc/rc2.d/S01whoopsie /etc/init.d/console-setup.sh" REM ## ; "echo 'echo 1' > /usr/sbin/runlevel"
 
 START /MIN "Move Icons..." %GO% "mv /usr/share/icons $PWD ; rm -rf /usr/share/icons ; ln -s $PWD/icons /usr/share/icons"
 
